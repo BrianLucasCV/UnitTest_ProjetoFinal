@@ -34,17 +34,30 @@ class Restaurant:
         else:
             print(f"{self.restaurant_name} já está fechado!")
 
+    # 5- Melhoria: Após definir o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
+    # 6- Melhoria: Adicionado retorno do metodo, quando for informado uma valor que não seja um numero
     def set_number_served(self, total_customers):
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
-        if self.open:
-            self.number_served = total_customers
-        else:
-            print(f"{self.restaurant_name} está fechado!")
+        try:
+            total_customers = int(total_customers)
+            if self.open:
+                self.number_served = total_customers
+                print(f"Esse restaurante está servindo {self.number_served} consumidores desde que está aberto.")
+            else:
+                print(f"{self.restaurant_name} está fechado!")
+        except ValueError:
+            print("Por favor, informe um valor válido (número inteiro) para o número de clientes atendidos.")
 
-    # 5- Melhoria: Alterado de = para +=
+    # 6- Melhoria: Alterado de = para +=
+    # 7- Melhoria: Após aumentar o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
     def increment_number_served(self, more_customers):
         """Aumenta número total de clientes atendidos por este restaurante."""
-        if self.open:
-            self.number_served += more_customers
-        else:
-            print(f"{self.restaurant_name} está fechado!")
+        try:
+            more_customers = int(more_customers)
+            if self.open:
+                self.number_served += more_customers
+                print(f"Esse restaurante está servindo {self.number_served} consumidores desde que está aberto.")
+            else:
+                print(f"{self.restaurant_name} está fechado!")
+        except ValueError:
+            print("Por favor, informe um valor válido (número inteiro) para o número de clientes atendidos.")
