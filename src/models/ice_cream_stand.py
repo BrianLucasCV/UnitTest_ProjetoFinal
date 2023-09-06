@@ -12,7 +12,7 @@ class IceCreamStand(Restaurant):
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = flavors_list
 
-    # 6- Melhoria: Alteração na ordem das validações do metodo,
+    # 3- Melhoria: Alteração na ordem das validações do metodo,
     # checando primeiro se existe um estoque, caso exista exibir a lista de sabores
     def flavors_available(self):
         """Percorra a lista de sabores disponíveis e imprima."""
@@ -23,9 +23,9 @@ class IceCreamStand(Restaurant):
             for flavor in self.flavors:
                 print(f"\t-{flavor}")
 
-    # 7- Melhoria: Correção no retorno do metodo, para que informe o sabor e não a lista de sabores
-    # 8- Melhoria: Adicionado retorno do metodo, quando for informado uma string vazia
-    # 9- Melhoria: Alteração na ordem das validações do metodo,
+    # 6- BUG: Correção no retorno do metodo, para que informe o sabor e não a lista de sabores
+    # 7- BUG: Adicionado retorno do metodo, quando for informado uma string vazia
+    # 4- Melhoria: Alteração na ordem das validações do metodo,
     # checando primeiro se existe um estoque, se está buscando um sabor válido e se tem ou não tem o sabor no momento
     def find_flavor(self, flavor):
         """Verifica se o sabor informado está disponível."""
@@ -38,8 +38,8 @@ class IceCreamStand(Restaurant):
         else:
             print(f"Não temos no momento {flavor}!")
 
-    # 10- Melhoria: Removido do metodo o retorno desnecessario "Estamos sem estoque atualmente!"
-    # 11- Melhoria: Adicionado retorno do metodo, quando for informado uma string vazia
+    # 8- BUG: Removido do metodo o retorno desnecessario "Estamos sem estoque atualmente!"
+    # 9- BUG: Adicionado retorno do metodo, quando for informado uma string vazia
     def add_flavor(self, flavor):
         """Adicione o sabor informado ao estoque."""
         if flavor == '':

@@ -7,15 +7,14 @@ class Restaurant:
         self.number_served = 0
         self.open = False
 
-    # 1- Melhoria: correção para retornar os textos da descrição do restaurante
-    # 2- Melhoria: correção na chamada do restaurant_name
+    # 1- BUG: Correção para retornar o "{self.restaurant_name}" no lugar de "{self.cuisine_type}"
     def describe_restaurant(self):
         """Imprima uma descrição simples da instância do restaurante."""
         print(f"Esse restaurante chama {self.restaurant_name} e serve {self.cuisine_type}.")
         print(f"Esse restaurante está servindo {self.number_served} consumidores desde que está aberto.")
 
-    # 3- Melhoria: Alterado o valor do 'self.open' de False para True
-    # 4- Melhoria: Alterado o valor do 'number_served' de -2 para 0
+    # 2- BUG: Alterado o valor do 'self.open' de False para True
+    # 3- BUG: Alterado o valor do 'number_served' de -2 para 0
     def open_restaurant(self):
         """Imprima uma mensagem indicando que o restaurante está aberto para negócios."""
         if not self.open:
@@ -34,8 +33,8 @@ class Restaurant:
         else:
             print(f"{self.restaurant_name} já está fechado!")
 
-    # 5- Melhoria: Após definir o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
-    # 6- Melhoria: Adicionado retorno do metodo, quando for informado uma valor que não seja um numero
+    # 1- Melhoria: Após definir o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
+    # 4- BUG: Adicionado retorno do metodo, quando for informado um valor invalido que não seja um numero
     def set_number_served(self, total_customers):
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
         try:
@@ -48,8 +47,8 @@ class Restaurant:
         except ValueError:
             print("Por favor, informe um valor válido (número inteiro) para o número de clientes atendidos.")
 
-    # 6- Melhoria: Alterado de = para +=
-    # 7- Melhoria: Após aumentar o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
+    # 5- BUG: Alterado de = para +=
+    # 2- Melhoria: Após aumentar o numero total de pessoas atendidas foi adicionado um retorno informando o seu valor
     def increment_number_served(self, more_customers):
         """Aumenta número total de clientes atendidos por este restaurante."""
         try:
